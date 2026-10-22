@@ -77,6 +77,62 @@ main{padding-top:var(--nav-h)}.hero{min-height:590px;padding-top:100px;padding-b
  .hero-aside .aside-item+.aside-item{border-left:0;border-top:1px solid var(--line)}
  .hero-aside .aside-item strong{margin-bottom:6px}
 }
+
+/* Mobile case-study hero fix: show the full artwork without cropping. */
+@media (max-width: 560px) {
+  .case-hero {
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 12px 0;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .case-hero > img {
+    display: block;
+    width: 100%;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    margin: 0 auto;
+  }
+  .case-phone-row {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 0 6px;
+    box-sizing: border-box;
+    transform: none !important;
+  }
+  .case .phone,
+  .case-phone-row .phone {
+    width: calc((100% - 24px) / 3) !important;
+    max-width: 140px;
+    min-width: 0;
+    height: auto !important;
+    aspect-ratio: 140 / 270;
+    box-sizing: border-box;
+    padding: 16px 6px 8px !important;
+    border-radius: 16px !important;
+    transform: none !important;
+    overflow: hidden;
+  }
+  .case .phone:nth-child(2),
+  .case .phone:nth-child(3) {
+    transform: none !important;
+  }
+}
+@media (max-width: 370px) {
+  .case-phone-row { gap: 4px; padding: 0 4px; }
+  .case .phone,
+  .case-phone-row .phone {
+    width: calc((100% - 16px) / 3) !important;
+    padding: 14px 4px 6px !important;
+  }
+}
+
 </style></head>
 <body>
 <header><nav class="nav wrap" aria-label="Main navigation"><a class="brand" href="#top" aria-label="Ganen home">GANEN.</a><div class="navlinks"><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></div></nav></header>
